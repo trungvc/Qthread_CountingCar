@@ -77,4 +77,5 @@ line_end = (300, 720)
 
 ## Giấy Phép
 Dự án này được cấp phép theo MIT License.
-
+## Báo cáo
+https://docs.google.com/document/d/1CEfRO2j_fvshY2qjRvJNXjiUDqIsq12YCrnuBMntJPo/edit?tab=t.0
