@@ -40,7 +40,7 @@ Qthread_CountingCar/
 ├── src/                    # Thư mục chứa mã nguồn chính của dự án
 │   ├── convert_uitopy.py   # Tập lệnh chuyển đổi tệp .ui thành mã Python
 │   ├── counting_thread.py  # Xử lý logic đếm phương tiện
-│   ├── detect.py           # Hàm phát hiện và trực quan hóa
+│   ├── detect.py           # Chứa các hàm phát hiện và trực quan hóa
 │   ├── main.py             # Điểm bắt đầu của ứng dụng
 │   ├── main_window.py      # Quản lý cửa sổ chính của ứng dụng
 │   ├── m1.py               # Tệp giao diện người dùng được tạo tự động
@@ -49,6 +49,20 @@ Qthread_CountingCar/
 └── requirements.txt        # Danh sách các thư viện Python cần thiết
 
 ```
+
+## Đa Luồng Với QThread
+Ứng dụng sử dụng đa luồng (`QThread`) trong PyQt5 để đảm bảo hiệu suất cao và xử lý video mượt mà. Hệ thống bao gồm 3 luồng chính:
+
+1. Luồng VideoThread(QThread):  Đọc video.
+                                Chạy YOLO detect.
+                                Phát frame_ready để gửi frame lên giao diện.
+                                Phát results_ready gửi kết quả detect sang CountingThread.
+2. Luồng CountingThread(QThread): Nhận kết quả phát hiện từ YOLO.
+                                  Thực hiện đếm xe.
+                                  Phát signal vehicle_counted cập nhật số lượng xe lên giao diện.
+3. MainWindow: Giao diện chính, tạo luồng, kết nối signal, hiển thị kết quả.
+
+Mô hình này giúp tối ưu hóa quá trình phát hiện và hiển thị hình ảnh mà không gây giật lag giao diện.
 
 ## Cấu Hình
 - Thay đổi nguồn video hoặc đường dẫn mô hình trong `video_thread.py`:
