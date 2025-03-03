@@ -69,7 +69,7 @@ Mô hình này giúp tối ưu hóa quá trình phát hiện và hiển thị h�
 ```python
 self.video_thread = VideoThread('duong_dan_video.mp4', 'duong_dan_model/yolov8n.pt')
 ```
-- Điều chỉnh **tọa độ đường kiểm tra** trong `detect.py` nếu cần:
+- Điều chỉnh **tọa độ đường kiểm tra** để đếm xe đi qua trong `detect.py` nếu cần:
 ```python
 line_start = (1500, 400)
 line_end = (300, 720)
