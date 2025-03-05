@@ -65,7 +65,6 @@ Mô hình này giúp tối ưu hóa quá trình phát hiện và hiển thị h�
 
 ## Cấu Hình
 - Thay đổi nguồn video hoặc đường dẫn mô hình trong `config.py`nếu cần
-- Chạy file main.py
 
 ## Giấy Phép
 Dự án này được cấp phép theo MIT License.
