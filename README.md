@@ -34,60 +34,38 @@ python main.py
 ```
 Qthread_CountingCar/
 ├── README.md
-├── config.py
-├── main_contronler.py
-├── main.py
 ├── requirements.txt
 ├── src/
-│   ├── Thread_Capture.py
-│   ├── Thread_Stream.py
-│   ├── Thread_Tracking.py
-│   ├── config.py
+|   └── model/
+|   ├── yolo11n.pt
+|   └── yolov8n.pt
+│   ├── Thread_Capture.py            # Luồng đọc dữ liệu từ video hoặc camera
+│   ├── Thread_Tracking.py        # Luồng xử lý phát hiện và đếm xe
+│   ├── Thread_Stream.py            # Luồng xử lý việc stream video (hiển thị video hoặc gửi ra ngoài)
+│   ├── config.py                # File chứa các đường link thư mục cần thiết (video, model)
 │   ├── gui/
-│   │   ├── main_window.py
-│   │   ├── main_window.ui
-│   │   └── __init__.py
-│   ├── main.py
-│   ├── main_contronler.py
-│   └── __pycache__/
-│       ├── Thread_Capture.cpython-39.pyc
-│       ├── Thread_Stream.cpython-39.pyc
-│       ├── Thread_Tracking.cpython-39.pyc
-│       ├── config.cpython-39.pyc
-│       ├── main.cpython-39.pyc
-│       ├── main_contronler.cpython-39.pyc
-│       ├── main_window.cpython-39.pyc
-│       └── video_thread.cpython-39.pyc
-└── model/
-    ├── yolo11n.pt
-    └── yolov8n.pt
+│   │   ├── m1.py                # File giao diện được convert từ file .ui
+│   │   ├── untitled.ui           # File giao diện được tạo từ QtDesigner
+│   ├── main.py                   # File chạy chương trình
+│   ├── main_contronler.py        # File điều khiển logic chính
 
 ```
 
 ## Đa Luồng Với QThread
 Ứng dụng sử dụng đa luồng (`QThread`) trong PyQt5 để đảm bảo hiệu suất cao và xử lý video mượt mà. Hệ thống bao gồm 3 luồng chính:
 
-1. Luồng VideoThread(QThread):  Đọc video.
-                                Chạy YOLO detect.
-                                Phát frame_ready để gửi frame lên giao diện.
-                                Phát results_ready gửi kết quả detect sang CountingThread.
-2. Luồng CountingThread(QThread): Nhận kết quả phát hiện từ YOLO.
-                                  Thực hiện đếm xe.
-                                  Phát signal vehicle_counted cập nhật số lượng xe lên giao diện.
-3. MainWindow: Giao diện chính, tạo luồng, kết nối signal, hiển thị kết quả.
+1. Luồng Thread_Capture:        Đọc video.
+                                Lưu các frame vào Queue
+2. Luồng Thread_Tracking:       Lấy các frame trong Queue
+                               Xử lý Yolo, đếm xe
+                               Vẽ lên frame rồi lưu lại vào Queue
+4. Luồng Thread_Stream:         Lấy các frame trong Queue rồi hiển thị
 
 Mô hình này giúp tối ưu hóa quá trình phát hiện và hiển thị hình ảnh mà không gây giật lag giao diện.
 
 ## Cấu Hình
-- Thay đổi nguồn video hoặc đường dẫn mô hình trong `video_thread.py`:
-```python
-self.video_thread = VideoThread('duong_dan_video.mp4', 'duong_dan_model/yolov8n.pt')
-```
-- Điều chỉnh **tọa độ đường kiểm tra** để đếm xe đi qua trong `detect.py` nếu cần:
-```python
-line_start = (1500, 400)
-line_end = (300, 720)
-```
+- Thay đổi nguồn video hoặc đường dẫn mô hình trong `config.py`nếu cần
+- Chạy file main.py
 
 ## Giấy Phép
 Dự án này được cấp phép theo MIT License.
