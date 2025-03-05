@@ -6,7 +6,6 @@ Dự án này triển khai hệ thống phát hiện và đếm phương tiện 
 ## Tính Năng
 - **Phát hiện phương tiện theo thời gian thực** bằng YOLOv8.
 - **Hệ thống đếm xe** khi phương tiện cắt ngang đường vạch kẻ.
-- **Giao diện đồ họa (GUI)** được xây dựng bằng PyQt5.
 - **Hỗ trợ đa luồng** giúp tối ưu hiệu suất.
 
 ## Cài Đặt
@@ -39,8 +38,8 @@ Qthread_CountingCar/
 |   └── model/
 |   ├── yolo11n.pt
 |   └── yolov8n.pt
-│   ├── Thread_Capture.py            # Luồng đọc dữ liệu từ video hoặc camera
-│   ├── Thread_Tracking.py        # Luồng xử lý phát hiện và đếm xe
+│       ├── Thread_Capture.py            # Luồng đọc dữ liệu từ video hoặc camera
+│       ├── Thread_Tracking.py        # Luồng xử lý phát hiện và đếm xe
 │   ├── Thread_Stream.py            # Luồng xử lý việc stream video (hiển thị video hoặc gửi ra ngoài)
 │   ├── config.py                # File chứa các đường link thư mục cần thiết (video, model)
 │   ├── main.py                   # File chạy chương trình
