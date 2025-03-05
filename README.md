@@ -55,7 +55,7 @@ Qthread_CountingCar/
 2. Luồng Thread_Tracking:       Lấy các frame trong Queue
                                Xử lý Yolo, đếm xe
                                Vẽ lên frame rồi lưu lại vào Queue
-4. Luồng Thread_Stream:         Lấy các frame trong Queue rồi hiển thị
+3. Luồng Thread_Stream:         Lấy các frame trong Queue rồi hiển thị
 
 Mô hình này giúp tối ưu hóa quá trình phát hiện và hiển thị hình ảnh mà không gây giật lag giao diện.
 
