@@ -43,9 +43,6 @@ Qthread_CountingCar/
 │   ├── Thread_Tracking.py        # Luồng xử lý phát hiện và đếm xe
 │   ├── Thread_Stream.py            # Luồng xử lý việc stream video (hiển thị video hoặc gửi ra ngoài)
 │   ├── config.py                # File chứa các đường link thư mục cần thiết (video, model)
-│   ├── gui/
-│   │   ├── m1.py                # File giao diện được convert từ file .ui
-│   │   ├── untitled.ui           # File giao diện được tạo từ QtDesigner
 │   ├── main.py                   # File chạy chương trình
 │   ├── main_contronler.py        # File điều khiển logic chính
 
