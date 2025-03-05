@@ -7,7 +7,7 @@ from ultralytics import YOLO
 from config import model_path
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 class ThreadTracking(threading.Thread):
-    def __init__(self, input_queue, model_path=model_path, process_every_n_frames=2):
+    def __init__(self, input_queue, model_path=model_path, process_every_n_frames=1):
         super().__init__()
         self.model = YOLO(model_path)
         self.running = True
