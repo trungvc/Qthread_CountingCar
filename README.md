@@ -33,20 +33,34 @@ python main.py
 ## Cấu Trúc Dự Án
 ```
 Qthread_CountingCar/
-├── .idea/                  # Thư mục cấu hình của PyCharm IDE
-├── __pycache__/            # Thư mục chứa các file bytecode đã biên dịch
-├── data/                   # Thư mục chứa dữ liệu video đầu vào
-├── model/                  # Thư mục chứa tệp trọng số của mô hình YOLOv8
-├── src/                    # Thư mục chứa mã nguồn chính của dự án
-│   ├── convert_uitopy.py   # Tập lệnh chuyển đổi tệp .ui thành mã Python
-│   ├── counting_thread.py  # Xử lý logic đếm phương tiện
-│   ├── detect.py           # Chứa các hàm phát hiện và trực quan hóa
-│   ├── main.py             # Điểm bắt đầu của ứng dụng
-│   ├── main_window.py      # Quản lý cửa sổ chính của ứng dụng
-│   ├── m1.py               # Tệp giao diện người dùng được tạo tự động
-│   ├── untitled.ui         # Tệp thiết kế giao diện ban đầu (PyQt Designer)
-│   └── video_thread.py     # Xử lý video và thực hiện phát hiện YOLOv8
-└── requirements.txt        # Danh sách các thư viện Python cần thiết
+├── README.md
+├── config.py
+├── main_contronler.py
+├── main.py
+├── requirements.txt
+├── src/
+│   ├── Thread_Capture.py
+│   ├── Thread_Stream.py
+│   ├── Thread_Tracking.py
+│   ├── config.py
+│   ├── gui/
+│   │   ├── main_window.py
+│   │   ├── main_window.ui
+│   │   └── __init__.py
+│   ├── main.py
+│   ├── main_contronler.py
+│   └── __pycache__/
+│       ├── Thread_Capture.cpython-39.pyc
+│       ├── Thread_Stream.cpython-39.pyc
+│       ├── Thread_Tracking.cpython-39.pyc
+│       ├── config.cpython-39.pyc
+│       ├── main.cpython-39.pyc
+│       ├── main_contronler.cpython-39.pyc
+│       ├── main_window.cpython-39.pyc
+│       └── video_thread.cpython-39.pyc
+└── model/
+    ├── yolo11n.pt
+    └── yolov8n.pt
 
 ```
 
