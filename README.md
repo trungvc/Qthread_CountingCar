@@ -38,8 +38,8 @@ Qthread_CountingCar/
 |   └── model/
 |   ├── yolo11n.pt
 |   └── yolov8n.pt
-│       ├── Thread_Capture.py            # Luồng đọc dữ liệu từ video hoặc camera
-│       ├── Thread_Tracking.py        # Luồng xử lý phát hiện và đếm xe
+│   ├── Thread_Capture.py            # Luồng đọc dữ liệu từ video hoặc camera
+│   ├── Thread_Tracking.py        # Luồng xử lý phát hiện và đếm xe
 │   ├── Thread_Stream.py            # Luồng xử lý việc stream video (hiển thị video hoặc gửi ra ngoài)
 │   ├── config.py                # File chứa các đường link thư mục cần thiết (video, model)
 │   ├── main.py                   # File chạy chương trình
