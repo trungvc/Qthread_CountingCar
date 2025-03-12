@@ -17,13 +17,7 @@ pip install -r requirements.txt
 > *Lưu ý:* Dự án sử dụng PyQt5 và YOLOv8 của Ultralytics.
 
 ## Hướng Dẫn Sử Dụng
-### 1. Chuyển đổi tệp giao diện (nếu có chỉnh sửa)
-Nếu bạn sửa đổi giao diện, chạy lệnh sau:
-```bash
-python convert_uitopy.py
-```
-
-### 2. Chạy ứng dụng
+### Chạy ứng dụng
 Thực hiện lệnh sau để khởi chạy chương trình:
 ```bash
 python main.py
